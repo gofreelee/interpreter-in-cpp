@@ -1,7 +1,7 @@
 #ifndef TOKEN_H_
 #define TOKEN_H_
 #include <string>
-    using Object = void *;
+using Object = void *;
 
 enum TokenType
 {
@@ -57,18 +57,23 @@ class Token
 
 private:
     TokenType type;
-    std::string lexeme;
     Object literal;
     int line;
 
 public:
+    std::string lexeme;
+
     //constructor
     Token(TokenType type, std::string lexeme, Object literal, int line) : type(type), lexeme(lexeme),
                                                                           literal(literal), line(line)
     {
     }
 
-    std::string toString();
-};
+    std::string toString()
+    {
 
+        return *(static_cast<std::string *>(literal));
+    }
+    TokenType getTokenType() { return type; }
+};
 #endif

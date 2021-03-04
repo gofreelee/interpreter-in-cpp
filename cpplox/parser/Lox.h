@@ -17,7 +17,10 @@ public:
     ~Lox() = default;
 };
 
-
+void Lox::error(int line, std::string message)
+{
+    printf("in line %d , error is : %s \n", line, message.c_str());
+}
 
 
 #endif

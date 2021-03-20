@@ -5,12 +5,12 @@ class BinaryExpr : public Expr
 {
 private:
     //two operator
-    Expr* left;
-    Expr* right; 
+    Expr *left;
+    Expr *right;
+    Token op;
 public:
-    BinaryExpr(Expr* _left, Expr* _right, Token operand):Expr(operand), left(_left), right(_right)
+    BinaryExpr(Expr *_left, Expr *_right, Token _op) :  op(_op), left(_left), right(_right)
     {
-        
     }
 };
 

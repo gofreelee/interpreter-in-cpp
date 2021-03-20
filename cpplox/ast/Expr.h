@@ -4,8 +4,7 @@
 class Expr
 {
 private:
-    Token op;
 public:
-    Expr(Token _op):op(_op){}
+    Expr() = default;
 };
 #endif

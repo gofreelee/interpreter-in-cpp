@@ -79,6 +79,7 @@ Expr *Parser::primary()
 {
     if (match(LEFT_PAREN))
     {
+        eat();
         Expr *primary_expr = expression();
         match(RIGHT_PAREN) ? eat() : Token();
         return primary_expr;
@@ -91,7 +92,7 @@ bool Parser::match(TokenType type)
 {
     if (curr_cursor >= tokenList.size())
         return false;
-    return tokenList[curr_cursor++].getTokenType() == type;
+    return tokenList[curr_cursor].getTokenType() == type;
 }
 
 Token Parser::eat()

@@ -38,6 +38,7 @@ Expr *Parser::comparison()
         Expr *right = term();
         expr = new BinaryExpr(expr, right, op);
     }
+    return expr;
 }
 
 Expr *Parser::term()
